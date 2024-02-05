@@ -52,5 +52,8 @@
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
     "tsc-files": "^1.1.4"
+  },
+  "lint-staged": {
+    "*.--write": "prettier --write"
   }
 }
