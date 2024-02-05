@@ -1,5 +1,14 @@
-import React from "react";
+// Module Imports
+import React, { useState } from "react";
+
+// Types import
+import { DataModel } from "../../API/types";
+
+// Internal imports
+import { SAMPLE } from "../../API/data";
 
 export const App: React.FunctionComponent = () => {
-  return <div>Hello test of the react app</div>;
+  const [data] = useState<DataModel>(SAMPLE);
+
+  return <div>{JSON.stringify(data)}</div>;
 };
