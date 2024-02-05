@@ -51,6 +51,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.2.2",
     "prettier": "^3.0.3",
-    "tsc-files": "^1.1.4"
+    "tsc-files": "^1.1.4",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
