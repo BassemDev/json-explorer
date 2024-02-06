@@ -10,6 +10,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Open-Sans, Helvetica, Sans-Serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
+    padding: 20px;
   }
 `;
