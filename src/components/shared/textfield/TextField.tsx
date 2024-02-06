@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 
 import { Hint } from "../hint/Hint";
@@ -22,21 +22,23 @@ const Wrapper = styled.div`
 
 interface Props {
   label: string;
+  inputValue: string;
   placeHolder?: string;
   hintMessage: string;
   updateHint: (text: string) => void;
+  setInputValue: Dispatch<SetStateAction<string>>;
 }
 
 export const TextField: React.FunctionComponent<Props> = ({
   label,
+  inputValue,
+  setInputValue,
   placeHolder = TEXT_FIELD_CONSTANTS.GENERAL_MESSAGE,
   hintMessage,
   updateHint,
 }) => {
-  const [value, setValue] = useState<string>("");
-
   const handleOnchange = (e: React.FormEvent<HTMLInputElement>) => {
-    setValue(e.currentTarget.value);
+    setInputValue(e.currentTarget.value);
 
     if (e.currentTarget.value.indexOf("res.") !== -1) {
       const path = e.currentTarget.value.substring(
@@ -53,7 +55,7 @@ export const TextField: React.FunctionComponent<Props> = ({
       <label htmlFor="Property">{label}</label>
       <StyledInput
         id="Property"
-        value={value}
+        value={inputValue}
         placeholder={placeHolder}
         onChange={handleOnchange}
       />
