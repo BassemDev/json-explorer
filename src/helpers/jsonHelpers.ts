@@ -1,3 +1,5 @@
+/* eslint no-eval: 0 */
+
 export const jsonPathToValue = (path: String, data: Object) => {
   const properties = path.split(".");
 
